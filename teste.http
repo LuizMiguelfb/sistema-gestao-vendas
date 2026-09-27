@@ -1,0 +1,39 @@
+POST /produtos
+GET /produtos
+GET /produtos/1
+PUT /produtos/1
+DELETE /produtos/1
+
+POST /vendas
+GET /vendas
+
+POST /despesas
+GET /despesas
+
+###
+
+POST http://localhost:3000/vendas HTTP/1.1
+Content-Type: application/json
+
+{
+    "canal": "Shopee",
+    "desconto": 0,
+    "frete": 0,
+    "taxas": 19.99,
+    "itens": [
+        {
+            "produto_id": 6,
+            "quantidade": 8
+        }
+    ]
+}
+
+###
+
+GET http://localhost:3000/dashboard HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:3000/produtos HTTP/1.1
+Content-Type: application/json
