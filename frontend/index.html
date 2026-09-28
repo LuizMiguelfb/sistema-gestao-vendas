@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VendasPro</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <span>🛒</span>
+        <h1>Vendas<span>Pro</span></h1>
+      </div>
+
+      <nav>
+        <a href="#" class="menu-item active"> 📊 Dashboard </a>
+
+        <a href="#" class="menu-item"> 📦 Produtos </a>
+
+        <a href="#" class="menu-item"> 🛒 Vendas </a>
+
+        <a href="#" class="menu-item"> 📋 Estoque </a>
+
+        <a href="#" class="menu-item"> 💰 Financeiro </a>
+
+        <a href="#" class="menu-item"> 📄 Relatórios </a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h2>Dashboard</h2>
+          <p>Visão geral das suas vendas</p>
+        </div>
+
+        <div class="filtro-periodo">
+          <div>
+            <label for="data-inicio">De</label>
+            <input type="date" id="data-inicio" />
+          </div>
+
+          <div>
+            <label for="data-fim">Até</label>
+            <input type="date" id="data-fim" />
+          </div>
+
+          <button id="btn-filtrar">Filtrar</button>
+        </div>
+      </header>
+
+      <section class="dashboard">
+        <div class="card">
+          <span class="card-title">Faturamento</span>
+          <strong id="faturamento">R$ 0,00</strong>
+          <small>Período selecionado</small>
+        </div>
+
+        <div class="card">
+          <span class="card-title">Lucro</span>
+          <strong id="lucro">R$ 0,00</strong>
+          <small>Lucro das vendas</small>
+        </div>
+
+        <div class="card">
+          <span class="card-title">Vendas</span>
+          <strong id="quantidade-vendas">0</strong>
+          <small>Vendas realizadas</small>
+        </div>
+
+        <div class="card">
+          <span class="card-title">Ticket médio</span>
+          <strong id="ticket-medio">R$ 0,00</strong>
+          <small>Valor médio por venda</small>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Resumo financeiro</h3>
+          </div>
+
+          <div class="financial-data">
+            <div>
+              <span>Custo dos produtos</span>
+              <strong id="custo-produtos">R$ 0,00</strong>
+            </div>
+
+            <div>
+              <span>Taxas</span>
+              <strong id="taxas">R$ 0,00</strong>
+            </div>
+
+            <div>
+              <span>Margem</span>
+              <strong id="margem">0%</strong>
+            </div>
+
+            <div>
+              <span>Produtos vendidos</span>
+              <strong id="produtos-vendidos">0</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <h3>Vendas por canal</h3>
+          </div>
+
+          <div id="canais">Carregando...</div>
+        </div>
+      </section>
+
+      <section class="charts-grid">
+        <div class="panel chart-panel">
+          <div class="panel-header">
+            <h3>Desempenho financeiro</h3>
+          </div>
+
+          <canvas id="graficoFinanceiro"></canvas>
+        </div>
+
+        <div class="panel chart-panel">
+          <div class="panel-header">
+            <h3>Vendas por canal</h3>
+          </div>
+
+          <canvas id="graficoCanais"></canvas>
+        </div>
+      </section>
+      
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
